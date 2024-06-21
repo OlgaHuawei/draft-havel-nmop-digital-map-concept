@@ -262,7 +262,7 @@ REQ-RELATIONSHIPS:
 REQ-CONDITIONAL:
 : Provide capability for conditional retrieval of parts of Digital Map.
 
-REQ-TEMP-HISTO:
+REQ-TEMPO-HISTO:
 : Must support geo-spatial, temporal, and historical data.  The temporal and historical can be supported external 
 to the Digital Map.
 
