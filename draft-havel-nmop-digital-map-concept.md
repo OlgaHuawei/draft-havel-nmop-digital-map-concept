@@ -191,36 +191,51 @@ which is a catalyst for autonomous networking.
 
 # Digital Map Requirements
 
+## Core Requirements
+
 The following are the core requirements for the Digital Map (note that some of them are supported by default by {{!RFC8345}}):
 
-1.   Basic model with network, node, link, and interface entity types.
+REQ-BASIC-MODEL-SUPPORT:
+: Basic model with network, node, link, and interface entity types.
 
-2.   Layered Digital Map, from physical network (ideally optical, layer 2, layer 3) up to customer service and intent views.
+REQ-LAYERED-MODEL: 
+: Layered Digital Map, from physical network (ideally optical, layer 2, layer 3) up to customer service and intent views.
 
-3.   Open and programmable Digital Map: This includes "read" operations to retrieve the view of the network, typically as NorthBound 
-Interface (NBI) of Software Defined Networking (SDN) controllers or orchestrators. It also includes 
-"write" operations, not for the ability to directly change the Digital Map data (e.g., changing the network or service parameters), 
-but for offline simulations, also known as what-if scenarios.  Running a "what-if" analysis requires the ability to take 
-snapshots and to switch easily between them. Note that there is a need to distinguish between a change on the Digital Map 
+REQ-PROG-OPEN-MODEL:
+: Open and programmable Digital Map.
+: This includes "read" operations to retrieve the view of the network, typically as application-facing interface of Software Defined Networking (SDN) controllers or orchestrators.
+: It also includes "write" operations, not for the ability to directly change the Digital Map data (e.g., changing the network or service parameters), 
+but for offline simulations, also known as what-if scenarios.
+:  Running a "what-if" analysis requires the ability to take 
+snapshots and to switch easily between them.
+: Note that there is a need to distinguish between a change on the Digital Map 
 for future simulation and a change that reflects the current reality of the network.
 
-4.   Standard based Digital Map Models and APIs, for multi-vendor support:  Digital Map must provide the standard APIs 
+REQ-STD-API-BASED:
+: Standard based Digital Map Models and APIs, for multi-vendor support.
+:  Digital Map must provide the standard APIs 
 that provide for read/write and queries.  These APIs must also provide the capability to retrieve the links to external data/models.
 
-5.   Digital Map models and APIs must be common over different network domains (campus, core, data center, etc.)
+REQ-COMMON-APP:
+: Digital Map models and APIs must be common over different network domains (campus, core, data center, etc.)
 
-6.   Digital Map must provide semantics for layered network topologies and for linking external models/data.
+REQ-SEMANTIC:
+: Digital Map must provide semantics for layered network topologies and for linking external models/data.
 
-7.   Digital Map must provide inter-layer and between layer relationships.
+REQ-LAYER-NAVIGATE:
+: Digital Map must provide inter-layer and between layer relationships.
 
-8.   Digital Map must be extensible with metadata.
+REQ-EXTENSIBLE:
+: Digital Map must be extensible with metadata.
 
-9.   Digital Map must be pluggable:
+REQ-PLUGG:
+: Digital Map must be pluggable. That is,
     
-     * Must connect to other YANG modules for inventory, configuration, assurance, etc. 
-     * Given that no all involved components can be available using YANG, there is a need to connect digital map YANG model with other modelling mechanisms.
+     + Must connect to other YANG modules for inventory, configuration, assurance, etc. 
+     + Given that no all involved components can be available using YANG, there is a need to connect digital map YANG model with other modelling mechanisms.
 
-11.  Digital Map must be optimized for graph traversal for paths. This means that only providing link nodes and 
+REQ-GRAPH-TRAVERSAL:
+: Digital Map must be optimized for graph traversal for paths. This means that only providing link nodes and 
 source and sink relationships to termination-points may not be sufficient, we may need to have the direct 
 relationship between the termination points or nodes.
 
@@ -228,28 +243,38 @@ relationship between the termination points or nodes.
 
 The following are design requirements for modelling the Digital Map:
 
-1.  Digital Map should contain only topological information.  Digital Map is not required to contain all data required for 
+REQ-TOPO-ONLY:
+: Digital Map should contain only topological information.
+:  Digital Map is not required to contain all data required for 
 all the management and use cases. However, it should be designed to support adequate pointers to other functional Digital 
 Twin data and models to ease navigating in the overall system. For example:
 
-  * ACLs and Route Policies are not required to be supported in the Digital Map, they would be linked to Digital Map
-  * Dynamic paths may either be outside of the Digital Map or part of traffic engineering data/models
+  + ACLs and Route Policies are not required to be supported in the Digital Map, they would be linked to Digital Map
+  + Dynamic paths may either be outside of the Digital Map or part of traffic engineering data/models
 
-2.  Digital Map entities should mainly contain properties used to identify topological entities at different layers, 
+REQ-PROPERTIES:
+: Digital Map entities should mainly contain properties used to identify topological entities at different layers, 
 identify their roles, and topological relationships between them.
 
-3.  Digital Map should contain only topological relationships inside each layer or between the layers (underlay/overlay).
+REQ-RELATIONSHIPS:
+: Digital Map should contain only topological relationships inside each layer or between the layers (underlay/overlay).
 
-4.  Provide capability for conditional retrieval of parts of Digital Map.
+REQ-CONDITIONAL:
+: Provide capability for conditional retrieval of parts of Digital Map.
 
-5.  Must support geo-spatial, temporal, and historical data.  The temporal and historical can be supported external 
+REQ-TEMPO-HISTO:
+: Must support geo-spatial, temporal, and historical data.  The temporal and historical can be supported external 
 to the Digital Map.
+
+## Architectural Requirements
 
 The following are the architectural requirements for the Digital Map:
 
-1.  Scale, performance, ease of integration
+REQ-DM-SCALES:
+: Scale, performance, ease of integration.
 
-2.  Initial discovery and dynamic (change only) synch with the physical network
+REQ-DM-DISCOVERY:
+: Initial discovery and dynamic (change only) synch with the physical network.
 
 # Security Considerations
 
@@ -264,7 +289,7 @@ This document has no actions for IANA.
 
 #  Related IETF Activities
 
-##  Network Topology
+##  Network Topology {#sec-ntw-topo}
 
    Interestingly, we could not find any network topology definition in
    IETF RFCs (not even in {{!RFC8345}}) or Internet-Drafts.  However, it is mentioned
@@ -295,7 +320,7 @@ This document has no actions for IANA.
    > Topology information may also be derived from servers that monitor
    network state, and from servers that perform provisioning functions.
 
-##  Core Digital Map Components
+##  Core Digital Map Components {#sec-core}
 
    The following specifications are core for the Digital Map:
 
@@ -313,7 +338,7 @@ This document has no actions for IANA.
 
        *  A YANG data model for IS-IS topology {{?I-D.ogondio-opsawg-isis-topology}}
 
-##  Additional Digital Map Components
+##  Additional Digital Map Components {#sec-add}
 
 The Digital Map may need to link to the following models, some are already augmenting {{?RFC8345}}:
 
