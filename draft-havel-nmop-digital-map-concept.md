@@ -1,7 +1,7 @@
 ---
 title: "Digital Map: Concept, Requirements, and Use Cases"
 abbrev: Digital Map Concept & Needs
-docname: draft-havel-nmop-digital-map-concept-latest
+docname: draft-havel-nmop-digital-map-concept-00
 category: info
 
 stand_alone: true
@@ -10,17 +10,32 @@ area: "Operations and Management"
 wg: NMOP
 
 consensus: true
-v: 3
+v: 0
 
 author:
   -
     fullname: Olga Havel
     org: Huawei
     email: olga.havel@huawei.com
+  -
+    fullname: Benoit Claise
+    org: Huawei
+    email: benoit.claise@huawei.com
+  -
+    fullname: Oscar Gonzalez de Dios
+    org: Telefonica
+    email: oscar.gonzalezdedios@telefonica.com
 
 contributor:
+  -
+    fullname: Ahmed Elhassany
+    org: Swisscom
+    email: Ahmed.Elhassany@swisscom.com
+  -
+    fullname: Thomas Graf
+    org: Swisscom
+    email: thomas.graf@swisscom.com
 
-  
 normative:
 
 informative:
@@ -31,6 +46,13 @@ informative:
 This document defines the concept of Digital Map, explains its connection to the Digital Twin, and identifies a set of Digital Map requirements and use cases.
 
 The document intends to be used as a reference for the assessment effort of the various topology modules to meet Digital Map requirements.
+
+Discussion Venues
+
+   This note is to be removed before publishing as an RFC.
+
+   Source for this draft and an issue tracker can be found at
+   https://github.com/OlgaHuawei/draft-havel-nmop-digital-map-concept/.
 
 --- middle
 
@@ -54,9 +76,9 @@ improving the automation and intelligence level of the network).
 ## Digital Map
 
 Digital Map provides the core multi-layer topology model and data for the Digital Twin and connects them to the 
-other Digital Twin models and data.
+other Digital Twin models and data. This includes layers from physical topology to service topology.
 
-The Digital Map modelling defines the core topological entities (network, node, link, and interface), their role in 
+The Digital Map modelling defines the core topological entities (network, node, link, and interface) at each layer, their role in 
 the network, core properties, and relationships both inside each layer and between the layers.
 
 The Digital Map model can be approached as a topological model that is linked to other functional parts of the Digital Twin and 
@@ -196,7 +218,7 @@ which is a catalyst for autonomous networking.
 The following are the core requirements for the Digital Map (note that some of them are supported by default by {{!RFC8345}}):
 
 REQ-BASIC-MODEL-SUPPORT:
-: Basic model with network, node, link, and interface entity types.
+: Basic model with network, node, link, and interface entity types. This means that users of the digital map model must be able to understand topology model at any layer via these core concepts only, without having to go to the details of the specific augmentations to understand the topology.
 
 REQ-LAYERED-MODEL: 
 : Layered Digital Map, from physical network (ideally optical, layer 2, layer 3) up to customer service and intent views.
@@ -217,7 +239,7 @@ REQ-STD-API-BASED:
 that provide for read/write and queries.  These APIs must also provide the capability to retrieve the links to external data/models.
 
 REQ-COMMON-APP:
-: Digital Map models and APIs must be common over different network domains (campus, core, data center, etc.)
+: Digital Map models and APIs must be common over different network domains (campus, core, data center, etc.). This means that clients of the digital map API must be able to understand the topology model of layers of any domain without having to understand the details of any technologies and domains.
 
 REQ-SEMANTIC:
 : Digital Map must provide semantics for layered network topologies and for linking external models/data.
@@ -336,7 +358,7 @@ This document has no actions for IANA.
 
        *  A YANG data model for OSFP topology  {{?I-D.ogondio-opsawg-ospf-topology}}
 
-       *  A YANG data model for IS-IS topology {{?I-D.ogondio-opsawg-isis-topology}}
+       *  A YANG data model for IS-IS topology {{?I-D.ogondio-nmop-isis-topology}}
 
 ##  Additional Digital Map Components {#sec-add}
 
@@ -364,4 +386,7 @@ correlates the network inventory with the general topology via RFC8345 augmentat
 # Acknowledgments
 {:numbered="false"}
 
-Thanks to xx for their reviews and comments.
+Many thanks to Mohamed Boucadair <mohamed.boucadair@orange.com> for his valuable contributions, reviews and comments.
+
+Many thanks to Nigel Davis <ndavis@ciena.com> for the valuable discussions and his validation of the modelling requirements.
+
