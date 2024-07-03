@@ -25,16 +25,17 @@ author:
     fullname: Oscar Gonzalez de Dios
     org: Telefonica
     email: oscar.gonzalezdedios@telefonica.com
+  -
+    fullname: Thomas Graf
+    org: Swisscom
+    email: thomas.graf@swisscom.com
 
 contributor:
   -
     fullname: Ahmed Elhassany
     org: Swisscom
     email: Ahmed.Elhassany@swisscom.com
-  -
-    fullname: Thomas Graf
-    org: Swisscom
-    email: thomas.graf@swisscom.com
+
 
 normative:
 
@@ -388,5 +389,5 @@ correlates the network inventory with the general topology via RFC8345 augmentat
 
 Many thanks to Mohamed Boucadair <mohamed.boucadair@orange.com> for his valuable contributions, reviews and comments.
 
-Many thanks to Nigel Davis <ndavis@ciena.com> for the valuable discussions and his validation of the modelling requirements.
+Many thanks to Nigel Davis <ndavis@ciena.com> for the valuable discussions and his confirmation of the modelling requirements.
 

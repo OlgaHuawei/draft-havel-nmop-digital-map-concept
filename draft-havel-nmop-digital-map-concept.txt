@@ -5,9 +5,11 @@
 NMOP                                                            O. Havel
 Internet-Draft                                                 B. Claise
 Intended status: Informational                                    Huawei
-Expires: 3 January 2025                                    O. G. D. Dios
+Expires: 4 January 2025                                    O. G. D. Dios
                                                               Telefonica
-                                                             2 July 2024
+                                                                 T. Graf
+                                                                Swisscom
+                                                             3 July 2024
 
 
            Digital Map: Concept, Requirements, and Use Cases
@@ -45,15 +47,13 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 3 January 2025.
+   This Internet-Draft will expire on 4 January 2025.
 
 
 
 
 
-
-
-Havel, et al.            Expires 3 January 2025                 [Page 1]
+Havel, et al.            Expires 4 January 2025                 [Page 1]
 
 Internet-Draft         Digital Map Concept & Needs             July 2024
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Havel, et al.            Expires 3 January 2025                 [Page 2]
+Havel, et al.            Expires 4 January 2025                 [Page 2]
 
 Internet-Draft         Digital Map Concept & Needs             July 2024
 
@@ -165,7 +165,7 @@ Internet-Draft         Digital Map Concept & Needs             July 2024
 
 
 
-Havel, et al.            Expires 3 January 2025                 [Page 3]
+Havel, et al.            Expires 4 January 2025                 [Page 3]
 
 Internet-Draft         Digital Map Concept & Needs             July 2024
 
@@ -221,7 +221,7 @@ Internet-Draft         Digital Map Concept & Needs             July 2024
 
 
 
-Havel, et al.            Expires 3 January 2025                 [Page 4]
+Havel, et al.            Expires 4 January 2025                 [Page 4]
 
 Internet-Draft         Digital Map Concept & Needs             July 2024
 
@@ -277,7 +277,7 @@ Internet-Draft         Digital Map Concept & Needs             July 2024
 
 
 
-Havel, et al.            Expires 3 January 2025                 [Page 5]
+Havel, et al.            Expires 4 January 2025                 [Page 5]
 
 Internet-Draft         Digital Map Concept & Needs             July 2024
 
@@ -333,7 +333,7 @@ Internet-Draft         Digital Map Concept & Needs             July 2024
 
 
 
-Havel, et al.            Expires 3 January 2025                 [Page 6]
+Havel, et al.            Expires 4 January 2025                 [Page 6]
 
 Internet-Draft         Digital Map Concept & Needs             July 2024
 
@@ -389,7 +389,7 @@ Internet-Draft         Digital Map Concept & Needs             July 2024
 
 
 
-Havel, et al.            Expires 3 January 2025                 [Page 7]
+Havel, et al.            Expires 4 January 2025                 [Page 7]
 
 Internet-Draft         Digital Map Concept & Needs             July 2024
 
@@ -445,7 +445,7 @@ Internet-Draft         Digital Map Concept & Needs             July 2024
 
 
 
-Havel, et al.            Expires 3 January 2025                 [Page 8]
+Havel, et al.            Expires 4 January 2025                 [Page 8]
 
 Internet-Draft         Digital Map Concept & Needs             July 2024
 
@@ -501,7 +501,7 @@ Internet-Draft         Digital Map Concept & Needs             July 2024
 
 
 
-Havel, et al.            Expires 3 January 2025                 [Page 9]
+Havel, et al.            Expires 4 January 2025                 [Page 9]
 
 Internet-Draft         Digital Map Concept & Needs             July 2024
 
@@ -557,7 +557,7 @@ Internet-Draft         Digital Map Concept & Needs             July 2024
 
 
 
-Havel, et al.            Expires 3 January 2025                [Page 10]
+Havel, et al.            Expires 4 January 2025                [Page 10]
 
 Internet-Draft         Digital Map Concept & Needs             July 2024
 
@@ -613,7 +613,7 @@ Internet-Draft         Digital Map Concept & Needs             July 2024
 
 
 
-Havel, et al.            Expires 3 January 2025                [Page 11]
+Havel, et al.            Expires 4 January 2025                [Page 11]
 
 Internet-Draft         Digital Map Concept & Needs             July 2024
 
@@ -669,7 +669,7 @@ Internet-Draft         Digital Map Concept & Needs             July 2024
 
 
 
-Havel, et al.            Expires 3 January 2025                [Page 12]
+Havel, et al.            Expires 4 January 2025                [Page 12]
 
 Internet-Draft         Digital Map Concept & Needs             July 2024
 
@@ -725,7 +725,7 @@ A.1.  Network Topology
 
 
 
-Havel, et al.            Expires 3 January 2025                [Page 13]
+Havel, et al.            Expires 4 January 2025                [Page 13]
 
 Internet-Draft         Digital Map Concept & Needs             July 2024
 
@@ -781,7 +781,7 @@ A.3.  Additional Digital Map Components
 
 
 
-Havel, et al.            Expires 3 January 2025                [Page 14]
+Havel, et al.            Expires 4 January 2025                [Page 14]
 
 Internet-Draft         Digital Map Concept & Needs             July 2024
 
@@ -799,7 +799,7 @@ Acknowledgments
    reviews and comments.
 
    Many thanks to Nigel Davis ndavis@ciena.com (mailto:ndavis@ciena.com)
-   for the valuable discussions and his validation of the modelling
+   for the valuable discussions and his confirmation of the modelling
    requirements.
 
 Contributors
@@ -807,11 +807,6 @@ Contributors
    Ahmed Elhassany
    Swisscom
    Email: Ahmed.Elhassany@swisscom.com
-
-
-   Thomas Graf
-   Swisscom
-   Email: thomas.graf@swisscom.com
 
 
 Authors' Addresses
@@ -831,10 +826,15 @@ Authors' Addresses
    Email: oscar.gonzalezdedios@telefonica.com
 
 
+   Thomas Graf
+   Swisscom
+   Email: thomas.graf@swisscom.com
 
 
 
 
 
 
-Havel, et al.            Expires 3 January 2025                [Page 15]
+
+
+Havel, et al.            Expires 4 January 2025                [Page 15]

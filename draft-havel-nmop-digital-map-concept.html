@@ -8,6 +8,7 @@
 <meta content="Olga Havel" name="author">
 <meta content="Benoit Claise" name="author">
 <meta content="Oscar Gonzalez de Dios" name="author">
+<meta content="Thomas Graf" name="author">
 <meta content="
        This document defines the concept of Digital Map, explains its connection to the Digital Twin, and identifies a set of Digital Map requirements and use cases. 
        The document intends to be used as a reference for the assessment effort of the various topology modules to meet Digital Map requirements. 
@@ -16,10 +17,10 @@
        Source for this draft and an issue tracker can be found at
    https://github.com/OlgaHuawei/draft-havel-nmop-digital-map-concept/. 
     " name="description">
-<meta content="xml2rfc 3.21.0" name="generator">
+<meta content="xml2rfc 3.22.0" name="generator">
 <meta content="draft-havel-nmop-digital-map-concept-00" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.21.0
+  xml2rfc 3.22.0
     Python 3.10.12
     ConfigArgParse 1.7
     google-i18n-address 3.1.0
@@ -27,15 +28,14 @@
     Jinja2 3.1.4
     lxml 4.9.4
     platformdirs 4.2.2
-    pycountry 23.12.11
+    pycountry 24.6.1
     PyYAML 6.0.1
-    requests 2.31.0
+    requests 2.32.3
     setuptools 59.6.0
-    six 1.16.0
     wcwidth 0.2.13
-    weasyprint 61.2
+    weasyprint 62.3
 -->
-<link href="/usr/src/app/tmp/dd09d956-02f7-4549-8cee-65e840a0ead2/draft-havel-nmop-digital-map-concept-00.xml" rel="alternate" type="application/rfc+xml">
+<link href="/usr/src/app/tmp/142ac6f9-5b5b-49f4-9cbb-ff6cebb403df/draft-havel-nmop-digital-map-concept.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
 <style type="text/css">/*
 
@@ -1086,7 +1086,7 @@ table {
 ol.type-a { list-style-type: lower-alpha; }
 ol.type-A { list-style-type: upper-alpha; }
 ol.type-i { list-style-type: lower-roman; }
-ol.type-I { list-style-type: lower-roman; }
+ol.type-I { list-style-type: upper-roman; }
 /* Apply the print table and row borders in general, on request from the RPC,
 and increase the contrast between border and odd row background slightly */
 table {
@@ -1222,7 +1222,7 @@ li > p:last-of-type:only-child {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Havel, et al.</td>
-<td class="center">Expires 3 January 2025</td>
+<td class="center">Expires 4 January 2025</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1235,12 +1235,12 @@ li > p:last-of-type:only-child {
 <dd class="internet-draft">draft-havel-nmop-digital-map-concept-00</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2024-07-02" class="published">2 July 2024</time>
+<time datetime="2024-07-03" class="published">3 July 2024</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-01-03">3 January 2025</time></dd>
+<dd class="expires"><time datetime="2025-01-04">4 January 2025</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1254,6 +1254,10 @@ li > p:last-of-type:only-child {
 <div class="author">
       <div class="author-name">O. G. D. Dios</div>
 <div class="org">Telefonica</div>
+</div>
+<div class="author">
+      <div class="author-name">T. Graf</div>
+<div class="org">Swisscom</div>
 </div>
 </dd>
 </dl>
@@ -1287,7 +1291,7 @@ li > p:last-of-type:only-child {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 3 January 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 4 January 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -2067,7 +2071,7 @@ correlates the network inventory with the general topology via RFC8345 augmentat
 <a href="#name-acknowledgments" class="section-name selfRef">Acknowledgments</a>
       </h2>
 <p id="appendix-B-1">Many thanks to Mohamed Boucadair <a href="mailto:mohamed.boucadair@orange.com">mohamed.boucadair@orange.com</a> for his valuable contributions, reviews and comments.<a href="#appendix-B-1" class="pilcrow">¶</a></p>
-<p id="appendix-B-2">Many thanks to Nigel Davis <a href="mailto:ndavis@ciena.com">ndavis@ciena.com</a> for the valuable discussions and his validation of the modelling requirements.<a href="#appendix-B-2" class="pilcrow">¶</a></p>
+<p id="appendix-B-2">Many thanks to Nigel Davis <a href="mailto:ndavis@ciena.com">ndavis@ciena.com</a> for the valuable discussions and his confirmation of the modelling requirements.<a href="#appendix-B-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="contributors">
@@ -2081,14 +2085,6 @@ correlates the network inventory with the general topology via RFC8345 augmentat
 <div class="email">
 <span>Email:</span>
 <a href="mailto:Ahmed.Elhassany@swisscom.com" class="email">Ahmed.Elhassany@swisscom.com</a>
-</div>
-</address>
-<address class="vcard">
-        <div dir="auto" class="left"><span class="fn nameRole">Thomas Graf</span></div>
-<div dir="auto" class="left"><span class="org">Swisscom</span></div>
-<div class="email">
-<span>Email:</span>
-<a href="mailto:thomas.graf@swisscom.com" class="email">thomas.graf@swisscom.com</a>
 </div>
 </address>
 </section>
@@ -2120,6 +2116,14 @@ correlates the network inventory with the general topology via RFC8345 augmentat
 <div class="email">
 <span>Email:</span>
 <a href="mailto:oscar.gonzalezdedios@telefonica.com" class="email">oscar.gonzalezdedios@telefonica.com</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Thomas Graf</span></div>
+<div dir="auto" class="left"><span class="org">Swisscom</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:thomas.graf@swisscom.com" class="email">thomas.graf@swisscom.com</a>
 </div>
 </address>
 </section>
