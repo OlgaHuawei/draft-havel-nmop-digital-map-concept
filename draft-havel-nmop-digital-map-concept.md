@@ -69,7 +69,7 @@ The Digital Twin, constructed based on the four core technology elements, is int
 and control the physical network in its whole lifecycle with the help of optimization algorithms, management methods, 
 and expert knowledge.
 
-Also, that document states that a Digital Twin can be seen as an indispensable part of the overall network system 
+Also, that document {{?I-D.irtf-nmrg-network-digital-twin-arch}} states that a Digital Twin can be seen as an indispensable part of the overall network system 
 and provides a general architecture involving the whole lifecycle of physical networks in the future, serving the 
 application of innovative network technologies (e.g., network planning, construction, maintenance and optimization, 
 improving the automation and intelligence level of the network).
@@ -109,11 +109,11 @@ more on the customer service perspective.  All these views are needed for both i
 It is debatable what is part of the Digital Map itself versus what are pointers from the Digital Map to some 
 other sources of information.  As an example, a Digital Map should not specifically include all information 
 about the device inventory (product name, vendor, product series, embedded software, and
-hardware/software versions, as specified in a Network Inventory, for example. A pointer to another inventory system 
+hardware/software versions, as specified in a Network Inventory. A pointer to another inventory system 
 might be sufficient or support of means that ease the mapping between inventory and topology.
 
 Similarly, Digital Map should not specifically contain incidents, configuration, 
-data plane monitoring, or even assurance information, simply to name a few.
+data plane monitoring, or even assurance information, simply to name a few, but should provide pointers to the different data sources.
 
 ## Scope
 
@@ -146,9 +146,9 @@ Topology layer:
   models relationships between different layers of connectivity,
   where each layer represents a connectivity aspect of the network
   and service that needs to be configured, controlled and monitored.
-: The layer can also represent what needs to be managed by a
-  specific user, for example IGP layer can be of interest to the
-  user troubleshooting the routing, while the optical layer may be
+: The topology layer can also represent what needs to be managed by a
+  specific user, for example IGP layer can be of interest to the operator 
+  troubleshooting or optimizating the routing, while the optical layer may be
   of interest to the user managing the optical network.
 :  Some topology layers may relate closely to OSI layers, like L1 topology
    for physical topology, Layer 2 for link topology and Layer 3 for IPv4 and
@@ -222,7 +222,7 @@ REQ-BASIC-MODEL-SUPPORT:
 : Basic model with network, node, link, and interface entity types. This means that users of the digital map model must be able to understand topology model at any layer via these core concepts only, without having to go to the details of the specific augmentations to understand the topology.
 
 REQ-LAYERED-MODEL: 
-: Layered Digital Map, from physical network (ideally optical, layer 2, layer 3) up to customer service and intent views.
+: Layered Digital Map, from physical network (ideally optical, layer 2, layer 3) up to  service and intent views.
 
 REQ-PROG-OPEN-MODEL:
 : Open and programmable Digital Map.
