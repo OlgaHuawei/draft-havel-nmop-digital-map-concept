@@ -88,13 +88,13 @@ Table of Contents
    5.  Security Considerations . . . . . . . . . . . . . . . . . . .   9
    6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   9
    7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   9
-     7.1.  Normative References  . . . . . . . . . . . . . . . . . .   9
+     7.1.  Normative References  . . . . . . . . . . . . . . . . . .  10
      7.2.  Informative References  . . . . . . . . . . . . . . . . .  10
    Appendix A.  Related IETF Activities  . . . . . . . . . . . . . .  13
      A.1.  Network Topology  . . . . . . . . . . . . . . . . . . . .  13
-     A.2.  Core Digital Map Components . . . . . . . . . . . . . . .  14
+     A.2.  Core Digital Map Components . . . . . . . . . . . . . . .  13
      A.3.  Additional Digital Map Components . . . . . . . . . . . .  14
-   Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . .  15
+   Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . .  14
    Contributors  . . . . . . . . . . . . . . . . . . . . . . . . . .  15
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  15
 
@@ -128,13 +128,13 @@ Internet-Draft         Digital Map Concept & Needs             July 2024
    physical network in its whole lifecycle with the help of optimization
    algorithms, management methods, and expert knowledge.
 
-   Also, that document states that a Digital Twin can be seen as an
-   indispensable part of the overall network system and provides a
-   general architecture involving the whole lifecycle of physical
-   networks in the future, serving the application of innovative network
-   technologies (e.g., network planning, construction, maintenance and
-   optimization, improving the automation and intelligence level of the
-   network).
+   Also, that document [I-D.irtf-nmrg-network-digital-twin-arch] states
+   that a Digital Twin can be seen as an indispensable part of the
+   overall network system and provides a general architecture involving
+   the whole lifecycle of physical networks in the future, serving the
+   application of innovative network technologies (e.g., network
+   planning, construction, maintenance and optimization, improving the
+   automation and intelligence level of the network).
 
 1.2.  Digital Map
 
@@ -177,8 +177,7 @@ Internet-Draft         Digital Map Concept & Needs             July 2024
    simulations), with query capabilities and links to other YANG modules
    (e.g., Service Assurance for Intent-based Networking (SAIN)
    [RFC9417], Service Attachement Points (SAPs) [RFC9408], Inventory
-   [I-D.ietf-ivy-network-inventory-yang], and Assets
-   [I-D.palmero-opsawg-dmlmo]) and non-YANG models.
+   [I-D.ietf-ivy-network-inventory-yang], and non-YANG models.
 
 1.3.  Digital Map as a Prerequisite for Digital Twin
 
@@ -205,13 +204,14 @@ Internet-Draft         Digital Map Concept & Needs             July 2024
    information.  As an example, a Digital Map should not specifically
    include all information about the device inventory (product name,
    vendor, product series, embedded software, and hardware/software
-   versions, as specified in a Network Inventory, for example.  A
-   pointer to another inventory system might be sufficient or support of
-   means that ease the mapping between inventory and topology.
+   versions, as specified in a Network Inventory.  A pointer to another
+   inventory system might be sufficient or support of means that ease
+   the mapping between inventory and topology.
 
    Similarly, Digital Map should not specifically contain incidents,
    configuration, data plane monitoring, or even assurance information,
-   simply to name a few.
+   simply to name a few, but should provide pointers to the different
+   data sources.
 
 1.4.  Scope
 
@@ -255,10 +255,11 @@ Internet-Draft         Digital Map Concept & Needs             July 2024
       of the network and service that needs to be configured, controlled
       and monitored.
 
-      The layer can also represent what needs to be managed by a
-      specific user, for example IGP layer can be of interest to the
-      user troubleshooting the routing, while the optical layer may be
-      of interest to the user managing the optical network.
+      The topology layer can also represent what needs to be managed by
+      a specific user, for example IGP layer can be of interest to the
+      operator troubleshooting or optimizating the routing, while the
+      optical layer may be of interest to the user managing the optical
+      network.
 
       Some topology layers may relate closely to OSI layers, like L1
       topology for physical topology, Layer 2 for link topology and
@@ -267,13 +268,12 @@ Internet-Draft         Digital Map Concept & Needs             July 2024
       Some topology layers represent the control aspects of Layer 3,
       like OSPF, IS-IS, or BGP.
 
-      The top layer represents the service view of the connectivity,
+      The service layer represents the service view of the connectivity,
       that can differ for different types of services and for different
       providers/solutions.
 
-   Digital Map:  Basis for the Digital Twin that provides a virtual
-
-
+      The top layer represents the application / flow view of
+      connectivity.
 
 
 
@@ -282,6 +282,7 @@ Havel, et al.            Expires 4 January 2025                 [Page 5]
 Internet-Draft         Digital Map Concept & Needs             July 2024
 
 
+   Digital Map:  Basis for the Digital Twin that provides a virtual
       instance of the topological information of the network.  It
       provides the core multi-layer topology model and data for the
       Digital Twin and connects them to the other Digital Twin models
@@ -332,7 +333,6 @@ Internet-Draft         Digital Map Concept & Needs             July 2024
 
 
 
-
 Havel, et al.            Expires 4 January 2025                 [Page 6]
 
 Internet-Draft         Digital Map Concept & Needs             July 2024
@@ -361,14 +361,14 @@ Internet-Draft         Digital Map Concept & Needs             July 2024
    that some of them are supported by default by [RFC8345]):
 
    REQ-BASIC-MODEL-SUPPORT:  Basic model with network, node, link, and
-      interface entity types.  This means that users of the digital map
+      interface entity types.  This means that users of the Digital Map
       model must be able to understand topology model at any layer via
       these core concepts only, without having to go to the details of
       the specific augmentations to understand the topology.
 
    REQ-LAYERED-MODEL:  Layered Digital Map, from physical network
-      (ideally optical, layer 2, layer 3) up to customer service and
-      intent views.
+      (ideally optical, layer 2, layer 3) up to service and intent
+      views.
 
    REQ-PROG-OPEN-MODEL:  Open and programmable Digital Map.
 
@@ -400,20 +400,20 @@ Internet-Draft         Digital Map Concept & Needs             July 2024
    REQ-STD-API-BASED:  Standard based Digital Map Models and APIs, for
       multi-vendor support.
 
-      Digital Map must provide the standard APIs that provide for read/
-      write and queries.  These APIs must also provide the capability to
-      retrieve the links to external data/models.
+      Digital Map must provide the standard YANG APIs that provide for
+      read/write and queries.  These APIs must also provide the
+      capability to retrieve the links to external data/models.
 
    REQ-COMMON-APP:  Digital Map models and APIs must be common over
       different network domains (campus, core, data center, etc.).  This
-      means that clients of the digital map API must be able to
+      means that clients of the Digital Map API must be able to
       understand the topology model of layers of any domain without
       having to understand the details of any technologies and domains.
 
    REQ-SEMANTIC:  Digital Map must provide semantics for layered network
       topologies and for linking external models/data.
 
-   REQ-LAYER-NAVIGATE:  Digital Map must provide inter-layer and between
+   REQ-LAYER-NAVIGATE:  Digital Map must provide intra-layer and inter-
       layer relationships.
 
    REQ-EXTENSIBLE:  Digital Map must be extensible with metadata.
@@ -424,7 +424,7 @@ Internet-Draft         Digital Map Concept & Needs             July 2024
          configuration, assurance, etc.
 
       *  Given that no all involved components can be available using
-         YANG, there is a need to connect digital map YANG model with
+         YANG, there is a need to connect Digital Map YANG model with
          other modelling mechanisms.
 
    REQ-GRAPH-TRAVERSAL:  Digital Map must be optimized for graph
@@ -487,16 +487,16 @@ Internet-Draft         Digital Map Concept & Needs             July 2024
 
 5.  Security Considerations
 
-   TBC
+   As this document covers the Digital Map concepts, requirements, and
+   use cases, there is no specific security considerations.  However,
+   the RFC 8345 Security Considerations aspects will be useful when
+   designing the solution.
 
 6.  IANA Considerations
 
    This document has no actions for IANA.
 
 7.  References
-
-7.1.  Normative References
-
 
 
 
@@ -506,12 +506,22 @@ Havel, et al.            Expires 4 January 2025                 [Page 9]
 Internet-Draft         Digital Map Concept & Needs             July 2024
 
 
+7.1.  Normative References
+
    [RFC8345]  Clemm, A., Medved, J., Varga, R., Bahadur, N.,
               Ananthakrishnan, H., and X. Liu, "A YANG Data Model for
               Network Topologies", RFC 8345, DOI 10.17487/RFC8345, March
               2018, <https://www.rfc-editor.org/rfc/rfc8345>.
 
 7.2.  Informative References
+
+   [I-D.draft-ietf-nmop-network-incident-yang]
+              Hu, T., Contreras, L. M., Wu, Q., Davis, N., and C. Feng,
+              "A YANG Data Model for Network Incident Management", Work
+              in Progress, Internet-Draft, draft-ietf-nmop-network-
+              incident-yang-01, 28 June 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-nmop-
+              network-incident-yang-01>.
 
    [I-D.ietf-ccamp-network-inventory-yang]
               Yu, C., Belotti, S., Bouquier, J., Peruzzini, F., and P.
@@ -529,9 +539,6 @@ Internet-Draft         Digital Map Concept & Needs             July 2024
               <https://datatracker.ietf.org/doc/html/draft-ietf-ivy-
               network-inventory-yang-01>.
 
-   [I-D.ietf-nmop-incident-management]
-              "*** BROKEN REFERENCE ***".
-
    [I-D.ietf-opsawg-ntw-attachment-circuit]
               Boucadair, M., Roberts, R., de Dios, O. G., Barguil, S.,
               and B. Wu, "A Network YANG Data Model for Attachment
@@ -547,13 +554,6 @@ Internet-Draft         Digital Map Concept & Needs             July 2024
               Internet-Draft, draft-ietf-opsawg-teas-attachment-circuit-
               13, 29 May 2024, <https://datatracker.ietf.org/doc/html/
               draft-ietf-opsawg-teas-attachment-circuit-13>.
-
-
-
-
-
-
-
 
 
 
@@ -588,14 +588,6 @@ Internet-Draft         Digital Map Concept & Needs             July 2024
               <https://datatracker.ietf.org/doc/html/draft-ogondio-
               opsawg-ospf-topology-01>.
 
-   [I-D.palmero-opsawg-dmlmo]
-              Palmero, M., Brockners, F., Kumar, S., Bhandari, S.,
-              Cardona, C., and D. Lopez, "Data Model for Lifecycle
-              Management and Operations", Work in Progress, Internet-
-              Draft, draft-palmero-opsawg-dmlmo-10, 7 July 2023,
-              <https://datatracker.ietf.org/doc/html/draft-palmero-
-              opsawg-dmlmo-10>.
-
    [I-D.wzwb-ivy-network-inventory-topology]
               Wu, B., Zhou, C., Wu, Q., and M. Boucadair, "A Network
               Inventory Topology Model", Work in Progress, Internet-
@@ -611,17 +603,20 @@ Internet-Draft         Digital Map Concept & Needs             July 2024
               <https://datatracker.ietf.org/doc/html/draft-wzwb-opsawg-
               network-inventory-management-04>.
 
+   [RFC8299]  Wu, Q., Ed., Litkowski, S., Tomotaki, L., and K. Ogaki,
+              "YANG Data Model for L3VPN Service Delivery", RFC 8299,
+              DOI 10.17487/RFC8299, January 2018,
+              <https://www.rfc-editor.org/rfc/rfc8299>.
+
+
+
+
 
 
 Havel, et al.            Expires 4 January 2025                [Page 11]
 
 Internet-Draft         Digital Map Concept & Needs             July 2024
 
-
-   [RFC8299]  Wu, Q., Ed., Litkowski, S., Tomotaki, L., and K. Ogaki,
-              "YANG Data Model for L3VPN Service Delivery", RFC 8299,
-              DOI 10.17487/RFC8299, January 2018,
-              <https://www.rfc-editor.org/rfc/rfc8299>.
 
    [RFC8466]  Wen, B., Fioccola, G., Ed., Xie, C., and L. Jalil, "A YANG
               Data Model for Layer 2 Virtual Private Network (L2VPN)
@@ -663,17 +658,6 @@ Internet-Draft         Digital Map Concept & Needs             July 2024
               Architecture", RFC 9417, DOI 10.17487/RFC9417, July 2023,
               <https://www.rfc-editor.org/rfc/rfc9417>.
 
-
-
-
-
-
-
-Havel, et al.            Expires 4 January 2025                [Page 12]
-
-Internet-Draft         Digital Map Concept & Needs             July 2024
-
-
    [RFC9418]  Claise, B., Quilbeuf, J., Lucente, P., Fasano, P., and T.
               Arumugam, "A YANG Data Model for Service Assurance",
               RFC 9418, DOI 10.17487/RFC9418, July 2023,
@@ -682,6 +666,13 @@ Internet-Draft         Digital Map Concept & Needs             July 2024
    [RFC9522]  Farrel, A., Ed., "Overview and Principles of Internet
               Traffic Engineering", RFC 9522, DOI 10.17487/RFC9522,
               January 2024, <https://www.rfc-editor.org/rfc/rfc9522>.
+
+
+
+Havel, et al.            Expires 4 January 2025                [Page 12]
+
+Internet-Draft         Digital Map Concept & Needs             July 2024
+
 
 Appendix A.  Related IETF Activities
 
@@ -722,14 +713,6 @@ A.1.  Network Topology
    |  network state, and from servers that perform provisioning
    |  functions.
 
-
-
-
-Havel, et al.            Expires 4 January 2025                [Page 13]
-
-Internet-Draft         Digital Map Concept & Needs             July 2024
-
-
 A.2.  Core Digital Map Components
 
    The following specifications are core for the Digital Map:
@@ -739,6 +722,13 @@ A.2.  Core Digital Map Components
    *  A YANG grouping for geographic location [RFC9179]
 
    *  IETF modules that augment [RFC8345] for different technologies:
+
+
+
+Havel, et al.            Expires 4 January 2025                [Page 13]
+
+Internet-Draft         Digital Map Concept & Needs             July 2024
+
 
       -  A YANG data model for Traffic Engineering (TE) Topologies
          [RFC8795]
@@ -771,13 +761,23 @@ A.3.  Additional Digital Map Components
       inventory with the general topology via RFC8345 augmentations that
       reference inventory.
 
-   *  Data Model for Lifecycle Management and Operations
-      [I-D.palmero-opsawg-dmlmo].
-
    *  KPIs: delay, jitter, loss
 
    *  Attachment Circuits (ACs) [I-D.ietf-opsawg-ntw-attachment-circuit]
       and [I-D.ietf-opsawg-teas-attachment-circuit]
+
+   *  Configuration: L2SM [RFC8466], L3SM [RFC8299], L2NM [RFC9291], and
+      L3NM [RFC9182]
+
+   *  Incident Management for Network Services
+      [I-D.draft-ietf-nmop-network-incident-yang]
+
+Acknowledgments
+
+   Many thanks to Mohamed Boucadair mohamed.boucadair@orange.com
+   (mailto:mohamed.boucadair@orange.com) for his valuable contributions,
+   reviews and comments.
+
 
 
 
@@ -785,18 +785,6 @@ Havel, et al.            Expires 4 January 2025                [Page 14]
 
 Internet-Draft         Digital Map Concept & Needs             July 2024
 
-
-   *  Configuration: L2SM [RFC8466], L3SM [RFC8299], L2NM [RFC9291], and
-      L3NM [RFC9182]
-
-   *  Incident Management for Network Services
-      [I-D.ietf-nmop-incident-management]
-
-Acknowledgments
-
-   Many thanks to Mohamed Boucadair mohamed.boucadair@orange.com
-   (mailto:mohamed.boucadair@orange.com) for his valuable contributions,
-   reviews and comments.
 
    Many thanks to Nigel Davis ndavis@ciena.com (mailto:ndavis@ciena.com)
    for the valuable discussions and his confirmation of the modelling
@@ -829,6 +817,18 @@ Authors' Addresses
    Thomas Graf
    Swisscom
    Email: thomas.graf@swisscom.com
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

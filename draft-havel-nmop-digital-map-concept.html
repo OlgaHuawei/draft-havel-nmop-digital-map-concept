@@ -35,7 +35,7 @@
     wcwidth 0.2.13
     weasyprint 62.3
 -->
-<link href="/usr/src/app/tmp/142ac6f9-5b5b-49f4-9cbb-ff6cebb403df/draft-havel-nmop-digital-map-concept.xml" rel="alternate" type="application/rfc+xml">
+<link href="/usr/src/app/tmp/296cf4c6-f2a4-4d4c-b607-8ff1568694cd/draft-havel-nmop-digital-map-concept.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
 <style type="text/css">/*
 
@@ -1417,7 +1417,7 @@ That reference document defines the core elements of Digital Twin: Data, Models,
 <p id="section-1.1-2">The Digital Twin, constructed based on the four core technology elements, is intended to analyze, diagnose, emulate, 
 and control the physical network in its whole lifecycle with the help of optimization algorithms, management methods, 
 and expert knowledge.<a href="#section-1.1-2" class="pilcrow">¶</a></p>
-<p id="section-1.1-3">Also, that document states that a Digital Twin can be seen as an indispensable part of the overall network system 
+<p id="section-1.1-3">Also, that document <span>[<a href="#I-D.irtf-nmrg-network-digital-twin-arch" class="cite xref">I-D.irtf-nmrg-network-digital-twin-arch</a>]</span> states that a Digital Twin can be seen as an indispensable part of the overall network system 
 and provides a general architecture involving the whole lifecycle of physical networks in the future, serving the 
 application of innovative network technologies (e.g., network planning, construction, maintenance and optimization, 
 improving the automation and intelligence level of the network).<a href="#section-1.1-3" class="pilcrow">¶</a></p>
@@ -1439,7 +1439,7 @@ different behaviors and actions, simulation, emulation, mathematical abstraction
 The Digital Map provides the access to this data via standard APIs for both read and write operations 
 (write operations for offline simulations), with query capabilities and links to other YANG modules 
 (e.g., Service Assurance for Intent-based Networking (SAIN) <span>[<a href="#RFC9417" class="cite xref">RFC9417</a>]</span>, Service Attachement Points (SAPs) <span>[<a href="#RFC9408" class="cite xref">RFC9408</a>]</span>, 
-Inventory <span>[<a href="#I-D.ietf-ivy-network-inventory-yang" class="cite xref">I-D.ietf-ivy-network-inventory-yang</a>]</span>, and Assets <span>[<a href="#I-D.palmero-opsawg-dmlmo" class="cite xref">I-D.palmero-opsawg-dmlmo</a>]</span>) and non-YANG models.<a href="#section-1.2-4" class="pilcrow">¶</a></p>
+Inventory <span>[<a href="#I-D.ietf-ivy-network-inventory-yang" class="cite xref">I-D.ietf-ivy-network-inventory-yang</a>]</span>, and non-YANG models.<a href="#section-1.2-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="digital-map-as-a-prerequisite-for-digital-twin">
@@ -1459,10 +1459,10 @@ more on the customer service perspective.  All these views are needed for both i
 <p id="section-1.3-4">It is debatable what is part of the Digital Map itself versus what are pointers from the Digital Map to some 
 other sources of information.  As an example, a Digital Map should not specifically include all information 
 about the device inventory (product name, vendor, product series, embedded software, and
-hardware/software versions, as specified in a Network Inventory, for example. A pointer to another inventory system 
+hardware/software versions, as specified in a Network Inventory. A pointer to another inventory system 
 might be sufficient or support of means that ease the mapping between inventory and topology.<a href="#section-1.3-4" class="pilcrow">¶</a></p>
 <p id="section-1.3-5">Similarly, Digital Map should not specifically contain incidents, configuration, 
-data plane monitoring, or even assurance information, simply to name a few.<a href="#section-1.3-5" class="pilcrow">¶</a></p>
+data plane monitoring, or even assurance information, simply to name a few, but should provide pointers to the different data sources.<a href="#section-1.3-5" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="scope">
@@ -1513,9 +1513,9 @@ and service that needs to be configured, controlled and monitored.<a href="#sect
         <dd class="break"></dd>
 <dt id="section-2-2.7"></dt>
         <dd style="margin-left: 1.5em" id="section-2-2.8">
-          <p id="section-2-2.8.1">The layer can also represent what needs to be managed by a
-specific user, for example IGP layer can be of interest to the
-user troubleshooting the routing, while the optical layer may be
+          <p id="section-2-2.8.1">The topology layer can also represent what needs to be managed by a
+specific user, for example IGP layer can be of interest to the operator 
+troubleshooting or optimizating the routing, while the optical layer may be
 of interest to the user managing the optical network.<a href="#section-2-2.8.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
@@ -1534,55 +1534,60 @@ IPv6 topologies.<a href="#section-2-2.10.1" class="pilcrow">¶</a></p>
         <dd class="break"></dd>
 <dt id="section-2-2.13"></dt>
         <dd style="margin-left: 1.5em" id="section-2-2.14">
-          <p id="section-2-2.14.1">The top layer represents
+          <p id="section-2-2.14.1">The service layer represents
 the service view of the connectivity, that can differ for
 different types of services and for different providers/solutions.<a href="#section-2-2.14.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
-<dt id="section-2-2.15">Digital Map:</dt>
+<dt id="section-2-2.15"></dt>
         <dd style="margin-left: 1.5em" id="section-2-2.16">
-          <p id="section-2-2.16.1">Basis for the Digital Twin that provides a virtual instance of the
-  topological information of the network.  It provides the core
-  multi-layer topology model and data for the Digital Twin and
-  connects them to the other Digital Twin models and data.<a href="#section-2-2.16.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.16.1">The top layer represents the application / flow view of connectivity.<a href="#section-2-2.16.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
-<dt id="section-2-2.17">Digital Map modelling:</dt>
+<dt id="section-2-2.17">Digital Map:</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.18">
-          <p id="section-2-2.18.1">The set of principles, guidelines, and conventions to model the
+          <p id="section-2-2.18.1">Basis for the Digital Twin that provides a virtual instance of the
+  topological information of the network.  It provides the core
+  multi-layer topology model and data for the Digital Twin and
+  connects them to the other Digital Twin models and data.<a href="#section-2-2.18.1" class="pilcrow">¶</a></p>
+</dd>
+        <dd class="break"></dd>
+<dt id="section-2-2.19">Digital Map modelling:</dt>
+        <dd style="margin-left: 1.5em" id="section-2-2.20">
+          <p id="section-2-2.20.1">The set of principles, guidelines, and conventions to model the
     Digital Map using the IETF <span>[<a href="#RFC8345" class="cite xref">RFC8345</a>]</span> approach.  They cover the
     network types (layers and sublayers), entity types, entity roles
     (network, node, termination point or link), entity properties and
-    relationship types between entities.<a href="#section-2-2.18.1" class="pilcrow">¶</a></p>
+    relationship types between entities.<a href="#section-2-2.20.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
-<dt id="section-2-2.19">Digital Map model:</dt>
-        <dd style="margin-left: 1.5em" id="section-2-2.20">
-          <p id="section-2-2.20.1">Defines the core topological entities, their role in the network,
-core properties and relationships both inside each layer and
-between the layers.<a href="#section-2-2.20.1" class="pilcrow">¶</a></p>
-</dd>
-        <dd class="break"></dd>
-<dt id="section-2-2.21"></dt>
+<dt id="section-2-2.21">Digital Map model:</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.22">
-          <p id="section-2-2.22.1">It is the basic topological model that is
+          <p id="section-2-2.22.1">Defines the core topological entities, their role in the network,
+core properties and relationships both inside each layer and
+between the layers.<a href="#section-2-2.22.1" class="pilcrow">¶</a></p>
+</dd>
+        <dd class="break"></dd>
+<dt id="section-2-2.23"></dt>
+        <dd style="margin-left: 1.5em" id="section-2-2.24">
+          <p id="section-2-2.24.1">It is the basic topological model that is
 linked to other functional parts of the Digital Twin and connects
 them all: configuration, maintenance, assurance (KPIs, status,
 health, symptoms, etc.), traffic engineering, different behaviors,
 simulation, emulation, mathematical abstractions, AI algorithms,
-etc.<a href="#section-2-2.22.1" class="pilcrow">¶</a></p>
+etc.<a href="#section-2-2.24.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
-<dt id="section-2-2.23">Digital Map data:</dt>
-        <dd style="margin-left: 1.5em" id="section-2-2.24">
-          <p id="section-2-2.24.1">Consists of instances of network and service topologies at
+<dt id="section-2-2.25">Digital Map data:</dt>
+        <dd style="margin-left: 1.5em" id="section-2-2.26">
+          <p id="section-2-2.26.1">Consists of instances of network and service topologies at
  different layers.  This includes instances of networks, nodes,
  links and termination points, topological relationships between
  nodes, links and termination points inside a network,
  relationships between instances belonging to different networks,
  links to functional data for the instances, including
  configuration, health, symptoms.<br>
- :The data can be historical, real-time, or future data for 'what-if' scenarios.<a href="#section-2-2.24.1" class="pilcrow">¶</a></p>
+ :The data can be historical, real-time, or future data for 'what-if' scenarios.<a href="#section-2-2.26.1" class="pilcrow">¶</a></p>
 </dd>
       <dd class="break"></dd>
 </dl>
@@ -1644,12 +1649,12 @@ which is a catalyst for autonomous networking.<a href="#section-3-3" class="pilc
 <span class="break"></span><dl class="dlParallel" id="section-4.1-2">
           <dt id="section-4.1-2.1">REQ-BASIC-MODEL-SUPPORT:</dt>
           <dd style="margin-left: 1.5em" id="section-4.1-2.2">
-            <p id="section-4.1-2.2.1">Basic model with network, node, link, and interface entity types. This means that users of the digital map model must be able to understand topology model at any layer via these core concepts only, without having to go to the details of the specific augmentations to understand the topology.<a href="#section-4.1-2.2.1" class="pilcrow">¶</a></p>
+            <p id="section-4.1-2.2.1">Basic model with network, node, link, and interface entity types. This means that users of the Digital Map model must be able to understand topology model at any layer via these core concepts only, without having to go to the details of the specific augmentations to understand the topology.<a href="#section-4.1-2.2.1" class="pilcrow">¶</a></p>
 </dd>
           <dd class="break"></dd>
 <dt id="section-4.1-2.3">REQ-LAYERED-MODEL:</dt>
           <dd style="margin-left: 1.5em" id="section-4.1-2.4">
-            <p id="section-4.1-2.4.1">Layered Digital Map, from physical network (ideally optical, layer 2, layer 3) up to customer service and intent views.<a href="#section-4.1-2.4.1" class="pilcrow">¶</a></p>
+            <p id="section-4.1-2.4.1">Layered Digital Map, from physical network (ideally optical, layer 2, layer 3) up to  service and intent views.<a href="#section-4.1-2.4.1" class="pilcrow">¶</a></p>
 </dd>
           <dd class="break"></dd>
 <dt id="section-4.1-2.5">REQ-PROG-OPEN-MODEL:</dt>
@@ -1687,13 +1692,13 @@ for future simulation and a change that reflects the current reality of the netw
           <dd class="break"></dd>
 <dt id="section-4.1-2.17"></dt>
           <dd style="margin-left: 1.5em" id="section-4.1-2.18">
-            <p id="section-4.1-2.18.1">Digital Map must provide the standard APIs 
+            <p id="section-4.1-2.18.1">Digital Map must provide the standard YANG APIs 
 that provide for read/write and queries.  These APIs must also provide the capability to retrieve the links to external data/models.<a href="#section-4.1-2.18.1" class="pilcrow">¶</a></p>
 </dd>
           <dd class="break"></dd>
 <dt id="section-4.1-2.19">REQ-COMMON-APP:</dt>
           <dd style="margin-left: 1.5em" id="section-4.1-2.20">
-            <p id="section-4.1-2.20.1">Digital Map models and APIs must be common over different network domains (campus, core, data center, etc.). This means that clients of the digital map API must be able to understand the topology model of layers of any domain without having to understand the details of any technologies and domains.<a href="#section-4.1-2.20.1" class="pilcrow">¶</a></p>
+            <p id="section-4.1-2.20.1">Digital Map models and APIs must be common over different network domains (campus, core, data center, etc.). This means that clients of the Digital Map API must be able to understand the topology model of layers of any domain without having to understand the details of any technologies and domains.<a href="#section-4.1-2.20.1" class="pilcrow">¶</a></p>
 </dd>
           <dd class="break"></dd>
 <dt id="section-4.1-2.21">REQ-SEMANTIC:</dt>
@@ -1703,7 +1708,7 @@ that provide for read/write and queries.  These APIs must also provide the capab
           <dd class="break"></dd>
 <dt id="section-4.1-2.23">REQ-LAYER-NAVIGATE:</dt>
           <dd style="margin-left: 1.5em" id="section-4.1-2.24">
-            <p id="section-4.1-2.24.1">Digital Map must provide inter-layer and between layer relationships.<a href="#section-4.1-2.24.1" class="pilcrow">¶</a></p>
+            <p id="section-4.1-2.24.1">Digital Map must provide intra-layer and inter-layer relationships.<a href="#section-4.1-2.24.1" class="pilcrow">¶</a></p>
 </dd>
           <dd class="break"></dd>
 <dt id="section-4.1-2.25">REQ-EXTENSIBLE:</dt>
@@ -1719,7 +1724,7 @@ that provide for read/write and queries.  These APIs must also provide the capab
                 <p id="section-4.1-2.28.2.1.1">Must connect to other YANG modules for inventory, configuration, assurance, etc.<a href="#section-4.1-2.28.2.1.1" class="pilcrow">¶</a></p>
 </li>
               <li class="normal" id="section-4.1-2.28.2.2">
-                <p id="section-4.1-2.28.2.2.1">Given that no all involved components can be available using YANG, there is a need to connect digital map YANG model with other modelling mechanisms.<a href="#section-4.1-2.28.2.2.1" class="pilcrow">¶</a></p>
+                <p id="section-4.1-2.28.2.2.1">Given that no all involved components can be available using YANG, there is a need to connect Digital Map YANG model with other modelling mechanisms.<a href="#section-4.1-2.28.2.2.1" class="pilcrow">¶</a></p>
 </li>
             </ul>
 </dd>
@@ -1815,7 +1820,8 @@ to the Digital Map.<a href="#section-4.2-4.8.1" class="pilcrow">¶</a></p>
       <h2 id="name-security-considerations">
 <a href="#section-5" class="section-number selfRef">5. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
       </h2>
-<p id="section-5-1">TBC<a href="#section-5-1" class="pilcrow">¶</a></p>
+<p id="section-5-1">As this document covers the Digital Map concepts, requirements, and use cases, there is no specific security considerations.
+However, the RFC 8345 Security Considerations aspects will be useful when designing the solution.<a href="#section-5-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="iana-considerations">
@@ -1849,6 +1855,10 @@ to the Digital Map.<a href="#section-4.2-4.8.1" class="pilcrow">¶</a></p>
 <a href="#section-7.2" class="section-number selfRef">7.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
         </h3>
 <dl class="references">
+<dt id="I-D.draft-ietf-nmop-network-incident-yang">[I-D.draft-ietf-nmop-network-incident-yang]</dt>
+        <dd>
+<span class="refAuthor">Hu, T.</span>, <span class="refAuthor">Contreras, L. M.</span>, <span class="refAuthor">Wu, Q.</span>, <span class="refAuthor">Davis, N.</span>, and <span class="refAuthor">C. Feng</span>, <span class="refTitle">"A YANG Data Model for Network Incident Management"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-nmop-network-incident-yang-01</span>, <time datetime="2024-06-28" class="refDate">28 June 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-nmop-network-incident-yang-01">https://datatracker.ietf.org/doc/html/draft-ietf-nmop-network-incident-yang-01</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="I-D.ietf-ccamp-network-inventory-yang">[I-D.ietf-ccamp-network-inventory-yang]</dt>
         <dd>
 <span class="refAuthor">Yu, C.</span>, <span class="refAuthor">Belotti, S.</span>, <span class="refAuthor">Bouquier, J.</span>, <span class="refAuthor">Peruzzini, F.</span>, and <span class="refAuthor">P. Bedard</span>, <span class="refTitle">"A YANG Data Model for Network Hardware Inventory"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-ccamp-network-inventory-yang-02</span>, <time datetime="2023-07-09" class="refDate">9 July 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-network-inventory-yang-02">https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-network-inventory-yang-02</a>&gt;</span>. </dd>
@@ -1856,10 +1866,6 @@ to the Digital Map.<a href="#section-4.2-4.8.1" class="pilcrow">¶</a></p>
 <dt id="I-D.ietf-ivy-network-inventory-yang">[I-D.ietf-ivy-network-inventory-yang]</dt>
         <dd>
 <span class="refAuthor">Yu, C.</span>, <span class="refAuthor">Belotti, S.</span>, <span class="refAuthor">Bouquier, J.</span>, <span class="refAuthor">Peruzzini, F.</span>, and <span class="refAuthor">P. Bedard</span>, <span class="refTitle">"A YANG Data Model for Network Inventory"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-ivy-network-inventory-yang-01</span>, <time datetime="2024-03-04" class="refDate">4 March 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-ivy-network-inventory-yang-01">https://datatracker.ietf.org/doc/html/draft-ietf-ivy-network-inventory-yang-01</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="I-D.ietf-nmop-incident-management">[I-D.ietf-nmop-incident-management]</dt>
-        <dd>
-<span class="refTitle">"*** BROKEN REFERENCE ***"</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-opsawg-ntw-attachment-circuit">[I-D.ietf-opsawg-ntw-attachment-circuit]</dt>
         <dd>
@@ -1880,10 +1886,6 @@ to the Digital Map.<a href="#section-4.2-4.8.1" class="pilcrow">¶</a></p>
 <dt id="I-D.ogondio-opsawg-ospf-topology">[I-D.ogondio-opsawg-ospf-topology]</dt>
         <dd>
 <span class="refAuthor">de Dios, O. G.</span>, <span class="refAuthor">Barguil, S.</span>, and <span class="refAuthor">V. Lopez</span>, <span class="refTitle">"A YANG Data Model for Open Shortest Path First (OSPF) Topology"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ogondio-opsawg-ospf-topology-01</span>, <time datetime="2023-10-23" class="refDate">23 October 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ogondio-opsawg-ospf-topology-01">https://datatracker.ietf.org/doc/html/draft-ogondio-opsawg-ospf-topology-01</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="I-D.palmero-opsawg-dmlmo">[I-D.palmero-opsawg-dmlmo]</dt>
-        <dd>
-<span class="refAuthor">Palmero, M.</span>, <span class="refAuthor">Brockners, F.</span>, <span class="refAuthor">Kumar, S.</span>, <span class="refAuthor">Bhandari, S.</span>, <span class="refAuthor">Cardona, C.</span>, and <span class="refAuthor">D. Lopez</span>, <span class="refTitle">"Data Model for Lifecycle Management and Operations"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-palmero-opsawg-dmlmo-10</span>, <time datetime="2023-07-07" class="refDate">7 July 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-palmero-opsawg-dmlmo-10">https://datatracker.ietf.org/doc/html/draft-palmero-opsawg-dmlmo-10</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.wzwb-ivy-network-inventory-topology">[I-D.wzwb-ivy-network-inventory-topology]</dt>
         <dd>
@@ -2046,19 +2048,16 @@ and <span>[<a href="#I-D.wzwb-opsawg-network-inventory-management" class="cite x
 correlates the network inventory with the general topology via RFC8345 augmentations that reference inventory.<a href="#appendix-A.3-2.3.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="appendix-A.3-2.4">
-            <p id="appendix-A.3-2.4.1">Data Model for Lifecycle Management and Operations <span>[<a href="#I-D.palmero-opsawg-dmlmo" class="cite xref">I-D.palmero-opsawg-dmlmo</a>]</span>.<a href="#appendix-A.3-2.4.1" class="pilcrow">¶</a></p>
+            <p id="appendix-A.3-2.4.1">KPIs: delay, jitter, loss<a href="#appendix-A.3-2.4.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="appendix-A.3-2.5">
-            <p id="appendix-A.3-2.5.1">KPIs: delay, jitter, loss<a href="#appendix-A.3-2.5.1" class="pilcrow">¶</a></p>
+            <p id="appendix-A.3-2.5.1">Attachment Circuits (ACs) <span>[<a href="#I-D.ietf-opsawg-ntw-attachment-circuit" class="cite xref">I-D.ietf-opsawg-ntw-attachment-circuit</a>]</span> and <span>[<a href="#I-D.ietf-opsawg-teas-attachment-circuit" class="cite xref">I-D.ietf-opsawg-teas-attachment-circuit</a>]</span><a href="#appendix-A.3-2.5.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="appendix-A.3-2.6">
-            <p id="appendix-A.3-2.6.1">Attachment Circuits (ACs) <span>[<a href="#I-D.ietf-opsawg-ntw-attachment-circuit" class="cite xref">I-D.ietf-opsawg-ntw-attachment-circuit</a>]</span> and <span>[<a href="#I-D.ietf-opsawg-teas-attachment-circuit" class="cite xref">I-D.ietf-opsawg-teas-attachment-circuit</a>]</span><a href="#appendix-A.3-2.6.1" class="pilcrow">¶</a></p>
+            <p id="appendix-A.3-2.6.1">Configuration: L2SM <span>[<a href="#RFC8466" class="cite xref">RFC8466</a>]</span>, L3SM <span>[<a href="#RFC8299" class="cite xref">RFC8299</a>]</span>, L2NM <span>[<a href="#RFC9291" class="cite xref">RFC9291</a>]</span>, and L3NM <span>[<a href="#RFC9182" class="cite xref">RFC9182</a>]</span><a href="#appendix-A.3-2.6.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="appendix-A.3-2.7">
-            <p id="appendix-A.3-2.7.1">Configuration: L2SM <span>[<a href="#RFC8466" class="cite xref">RFC8466</a>]</span>, L3SM <span>[<a href="#RFC8299" class="cite xref">RFC8299</a>]</span>, L2NM <span>[<a href="#RFC9291" class="cite xref">RFC9291</a>]</span>, and L3NM <span>[<a href="#RFC9182" class="cite xref">RFC9182</a>]</span><a href="#appendix-A.3-2.7.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="appendix-A.3-2.8">
-            <p id="appendix-A.3-2.8.1">Incident Management for Network Services <span>[<a href="#I-D.ietf-nmop-incident-management" class="cite xref">I-D.ietf-nmop-incident-management</a>]</span><a href="#appendix-A.3-2.8.1" class="pilcrow">¶</a></p>
+            <p id="appendix-A.3-2.7.1">Incident Management for Network Services <span>[<a href="#I-D.draft-ietf-nmop-network-incident-yang" class="cite xref">I-D.draft-ietf-nmop-network-incident-yang</a>]</span><a href="#appendix-A.3-2.7.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>

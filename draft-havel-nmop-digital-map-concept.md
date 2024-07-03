@@ -90,7 +90,7 @@ The Digital Map data consists of virtual instances of network and service topolo
 The Digital Map provides the access to this data via standard APIs for both read and write operations 
 (write operations for offline simulations), with query capabilities and links to other YANG modules 
 (e.g., Service Assurance for Intent-based Networking (SAIN) {{?RFC9417}}, Service Attachement Points (SAPs) {{?RFC9408}}, 
-Inventory {{?I-D.ietf-ivy-network-inventory-yang}}, and Assets {{?I-D.palmero-opsawg-dmlmo}}) and non-YANG models.
+Inventory {{?I-D.ietf-ivy-network-inventory-yang}}, and non-YANG models.
 
 ## Digital Map as a Prerequisite for Digital Twin
 
@@ -155,9 +155,10 @@ Topology layer:
    IPv6 topologies.
 : Some topology layers represent the control
    aspects of Layer 3, like OSPF, IS-IS, or BGP.
-:  The top layer represents
+:  The service layer represents
    the service view of the connectivity, that can differ for
    different types of services and for different providers/solutions.
+:  The top layer represents the application / flow view of connectivity.
 
 Digital Map:
 : Basis for the Digital Twin that provides a virtual instance of the
@@ -219,7 +220,7 @@ which is a catalyst for autonomous networking.
 The following are the core requirements for the Digital Map (note that some of them are supported by default by {{!RFC8345}}):
 
 REQ-BASIC-MODEL-SUPPORT:
-: Basic model with network, node, link, and interface entity types. This means that users of the digital map model must be able to understand topology model at any layer via these core concepts only, without having to go to the details of the specific augmentations to understand the topology.
+: Basic model with network, node, link, and interface entity types. This means that users of the Digital Map model must be able to understand topology model at any layer via these core concepts only, without having to go to the details of the specific augmentations to understand the topology.
 
 REQ-LAYERED-MODEL: 
 : Layered Digital Map, from physical network (ideally optical, layer 2, layer 3) up to  service and intent views.
@@ -236,17 +237,17 @@ for future simulation and a change that reflects the current reality of the netw
 
 REQ-STD-API-BASED:
 : Standard based Digital Map Models and APIs, for multi-vendor support.
-:  Digital Map must provide the standard APIs 
+:  Digital Map must provide the standard YANG APIs 
 that provide for read/write and queries.  These APIs must also provide the capability to retrieve the links to external data/models.
 
 REQ-COMMON-APP:
-: Digital Map models and APIs must be common over different network domains (campus, core, data center, etc.). This means that clients of the digital map API must be able to understand the topology model of layers of any domain without having to understand the details of any technologies and domains.
+: Digital Map models and APIs must be common over different network domains (campus, core, data center, etc.). This means that clients of the Digital Map API must be able to understand the topology model of layers of any domain without having to understand the details of any technologies and domains.
 
 REQ-SEMANTIC:
 : Digital Map must provide semantics for layered network topologies and for linking external models/data.
 
 REQ-LAYER-NAVIGATE:
-: Digital Map must provide inter-layer and between layer relationships.
+: Digital Map must provide intra-layer and inter-layer relationships.
 
 REQ-EXTENSIBLE:
 : Digital Map must be extensible with metadata.
@@ -255,7 +256,7 @@ REQ-PLUGG:
 : Digital Map must be pluggable. That is,
     
      + Must connect to other YANG modules for inventory, configuration, assurance, etc. 
-     + Given that no all involved components can be available using YANG, there is a need to connect digital map YANG model with other modelling mechanisms.
+     + Given that no all involved components can be available using YANG, there is a need to connect Digital Map YANG model with other modelling mechanisms.
 
 REQ-GRAPH-TRAVERSAL:
 : Digital Map must be optimized for graph traversal for paths. This means that only providing link nodes and 
@@ -301,7 +302,8 @@ REQ-DM-DISCOVERY:
 
 # Security Considerations
 
-TBC
+As this document covers the Digital Map concepts, requirements, and use cases, there is no specific security considerations.
+However, the RFC 8345 Security Considerations aspects will be useful when designing the solution.
 
 # IANA Considerations
 
@@ -374,15 +376,13 @@ It does not augment RFC8345 like the two Internet-Drafts that it evolved from {{
 and {{?I-D.wzwb-opsawg-network-inventory-management}}. {{?I-D.wzwb-ivy-network-inventory-topology}} 
 correlates the network inventory with the general topology via RFC8345 augmentations that reference inventory.
 
-*  Data Model for Lifecycle Management and Operations {{?I-D.palmero-opsawg-dmlmo}}.
-
 *  KPIs: delay, jitter, loss
 
 *  Attachment Circuits (ACs) {{?I-D.ietf-opsawg-ntw-attachment-circuit}} and {{?I-D.ietf-opsawg-teas-attachment-circuit}}
 
 *  Configuration: L2SM {{?RFC8466}}, L3SM {{?RFC8299}}, L2NM {{?RFC9291}}, and L3NM {{?RFC9182}}
 
-*  Incident Management for Network Services {{?I-D.ietf-nmop-incident-management}}
+*  Incident Management for Network Services {{?I-D.draft-ietf-nmop-network-incident-yang}}
 
 # Acknowledgments
 {:numbered="false"}
